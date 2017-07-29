@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+  <h1>{{title}}</h1>
+
+    <ul class="developers">
+    <li *ngFor="let developer of developers"[class.selected]="developer === selectedDeveloper"
+        (click)="onSelect(developer)">
+      <span class="badge"> {{developer.id}}</span> {{developer.name}}
+    </li>
+  </ul>
+
+  
+
+  <div *ngIf="selectedDeveloper">
+      <h2>{{selectedDeveloper.name}} details!</h2>
+      <div><label>id: </label>{{selectedDeveloper.id}}</div>
+      <div>
+        <label>name: </label>
+        <input [(ngModel)]="selectedDeveloper.name" placeholder="name"/>
+  </div>
+  </div>
+
+  
+
+  
+
+
+
+
